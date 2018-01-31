@@ -1,10 +1,9 @@
 $('body').on("keypress", function (e) {
   e = e || window.event;
-  $(`#pad-${e.keyCode}`).fadeOut(20).fadeIn(20);
 
   var audio = new Audio(`sounds/808/${e.keyCode}.wav`);
-
   audio.play();
+  $(`#pad-${e.keyCode}`).fadeOut(20).fadeIn(20);
 });
 
 
