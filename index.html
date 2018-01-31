@@ -4,14 +4,71 @@
     <meta charset="utf-8">
     <title>padController (Noemi & Anil)</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
-    <div class="jumbotron">
-      <h1>GI</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="jumbotron">
+            <div class="h4">Chill Samples</div>
+              <select class="form-control" name="select-chill" id="select_chill">
+                <option value="sunsetBeach">Sunset Beach</option>
+                <option value="fabianMazur">Fabian Mazur</option>
+              </select>
+              <br>
+              <div class="btn-group">
+                <button class="btn btn-default" id="play-loop-chill" data-type="chill"><i class="fa fa-play fa-lg" aria-hidden="true"></i></button>
+                <button class="btn btn-danger" id="stop-loop-chill" data-type="chill"><i class="fa fa-stop fa-lg" aria-hidden="true"></i></button>
+              </div>
+          </div>
+          <div class="jumbotron">
+            <div class="h4">Trap Samples</div>
+              <select class="form-control" name="select-trap" id="select_trap">
+                <option value="festivalTrap">Festival Trap</option>
+              </select>
+              <br>
+              <div class="btn-group">
+                <button class="btn btn-default" id="play-loop-trap" data-type="trap"><i class="fa fa-play fa-lg" aria-hidden="true"></i></button>
+                <button class="btn btn-danger" id="stop-loop-trap" data-type="trap"><i class="fa fa-stop fa-lg" aria-hidden="true"></i></button>
+              </div>
+          </div>
+        </div>
+        <div class="audio-element"></div>
+        <div class="col-md-8">
+          <div class="jumbotron">
+            <div class="row">
+              <div id="pad-56" class="col-md-2 key-pad">56</div>
+              <div id="pad-57" class="col-md-2 key-pad">57</div>
+              <div id="pad-48" class="col-md-2 key-pad">48</div>
+              <div id="pad-45" class="col-md-2 key-pad">45</div>
+
+              <div id="pad-117" class="col-md-2 key-pad">117</div>
+              <div id="pad-105" class="col-md-2 key-pad">105</div>
+              <div id="pad-111" class="col-md-2 key-pad">111</div>
+              <div id="pad-112" class="col-md-2 key-pad">112</div>
+
+              <div id="pad-104" class="col-md-2 key-pad">104</div>
+              <div id="pad-106" class="col-md-2 key-pad">106</div>
+              <div id="pad-107" class="col-md-2 key-pad">107</div>
+              <div id="pad-108" class="col-md-2 key-pad">108</div>
+
+              <div id="pad-98" class="col-md-2 key-pad">bass</div>
+              <div id="pad-110" class="col-md-2 key-pad">rim</div>
+              <div id="pad-109" class="col-md-2 key-pad">snare</div>
+              <div id="pad-44" class="col-md-2 key-pad">clap</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
 
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
