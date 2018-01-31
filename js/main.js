@@ -18,6 +18,7 @@ $('body').on('click', '[id^=play-loop-]', function(e){
 
   if(!thisSelector.hasClass('disabled')){
     var audio = new Audio(`sounds/samples/${sound}/${selectedLoop}.wav`);
+    audio.volume = 0.7;
     audio.addEventListener('ended', function() {
       this.currentTime = 0;
       this.play();
@@ -35,7 +36,6 @@ $('body').on('click', '[id^=stop-loop-]', function(e){
   $(`#play-loop-${sound}`).removeClass('disabled');
 
   var audio = sounds[sound];
-  console.log(sounds);
-console.log(audio);
+
   audio.pause();
 })
