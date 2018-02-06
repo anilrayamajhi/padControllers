@@ -1,9 +1,18 @@
 $('body').on("keypress", function (e) {
   e = e || window.event;
-
-  var audio = new Audio(`sounds/808/${e.keyCode}.wav`);
+// console.log(e.keyCode);
+  var audio = new Audio(`sounds/sounds/${e.keyCode}.wav`);
   audio.play();
   $(`#pad-${e.keyCode}`).fadeOut(20).fadeIn(20);
+});
+
+$('body').on("click", '.key-pad', function (e) {
+  e = e || window.event;
+  var keyCode = $(this).attr('value');
+
+  var audio = new Audio(`sounds/808/${keyCode}.wav`);
+  audio.play();
+  $(`#pad-${keyCode}`).fadeOut(20).fadeIn(20);
 });
 
 
