@@ -1,5 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: [header] 78px [body] auto [footer] 78px;
+}
+
+.container .body {
+  margin: 30px 60px;
+  padding: 60px 30px;
+  border-radius: 30px;
+  background: #282828;
+  display: inline-grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: [body] auto;
+}
+
+.container .body > div {
+  text-align: center;
+}
+
+.container .body .section-left {
+  display: inline-grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 70px;
+  grid-template-areas:
+    "box box box box"
+    "box box box box"
+    "box box box box"
+    "space space space space";
+  justify-items: center;
+  align-items: center;
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+.container .body .section-left .space {
+  grid-column: 1 / span 4;
+}
+
 .key-pad {
-  height: 107px;
-  background-color: #555;
-  margin: 26px;
+  background: #E8E7E7;
+  border-radius: 12px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
 }
