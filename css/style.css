@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900');
-
 body {
   font-family: 'Montserrat', sans-serif;
 }
@@ -8,19 +7,36 @@ body {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: [header] 78px [body] auto [footer] 78px;
+  justify-items: center;
 }
 
 .container .body {
+  display: inline-grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+}
+
+.container .body .body-container {
+  width: 100%;
+  background: #282828;
   margin: 30px 60px;
   padding: 60px 30px;
   border-radius: 30px;
-  background: #282828;
   display: inline-grid;
   grid-template-columns: 40% 60%;
   grid-template-rows: [body] auto;
 }
 
-.container .body > div {
+.header {
+  text-align: center;
+}
+
+.header>h1 {
+  display: inline;
+  vertical-align: top;
+}
+
+.container .body>div {
   text-align: center;
 }
 
@@ -28,14 +44,20 @@ body {
   display: inline-grid;
   grid-template-columns: 100px 100px 100px 100px;
   grid-template-rows: 100px 100px 100px 70px;
-  grid-template-areas:
-    "box box box box"
-    "box box box box"
-    "box box box box"
-    "space space space space";
+  grid-template-areas: "box box box box" "box box box box" "box box box box" "space space space space";
   justify-items: center;
   align-items: center;
-  grid-gap: 10px;
+  grid-gap: 12px;
+  justify-content: center;
+}
+
+.container .body .section-right {
+  display: inline-grid;
+  grid-template-columns: 140px 140px 140px 140px;
+  grid-template-rows: 140px 140px 140px 140px;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 12px;
   justify-content: center;
 }
 
@@ -49,8 +71,41 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+  text-transform: lowercase;
+}
+
+.key-pad>h3 {
+  margin: 5px;
+  color: #282828;
+}
+
+.orange {
+  border: 2px solid #FF670E;
+}
+
+.blue {
+  border: 2px solid #33A0E1;
+}
+
+.yellow {
+  border: 2px solid #FFCC00;
+}
+
+.space {
+  border: 2px solid #ff4b3e;
+}
+
+.footer {
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.footer a, .footer a:visited, .footer a:hover, .footer a:focus {
+  text-decoration: none;
+  color: #FF670E;
 }

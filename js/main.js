@@ -1,9 +1,19 @@
+var sounds = [];
+
+
 $('body').on("keypress", function (e) {
+  e.preventDefault();
   e = e || window.event;
-// console.log(e.keyCode);
-  var audio = new Audio(`sounds/sounds/${e.keyCode}.wav`);
-  audio.play();
-  $(`#pad-${e.keyCode}`).fadeOut(20).fadeIn(20);
+  if(e.keyCode == 32){
+    $.each(sounds, function(key, el){
+      el.pause();
+    })
+  }else{
+    var audio = new Audio(`sounds/sounds/${e.keyCode}.wav`);
+    sounds.push(audio);
+    audio.play();
+    $(`#pad-${e.keyCode}`).fadeOut(20).fadeIn(20);
+  }
 });
 
 $('body').on("click", '.key-pad', function (e) {
@@ -14,9 +24,6 @@ $('body').on("click", '.key-pad', function (e) {
   audio.play();
   $(`#pad-${keyCode}`).fadeOut(20).fadeIn(20);
 });
-
-
-var sounds = {};
 
 $('body').on('click', '[id^=play-loop-]', function(e){
 
