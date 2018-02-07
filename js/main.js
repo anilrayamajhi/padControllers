@@ -20,7 +20,7 @@ $('body').on("click", '.key-pad', function (e) {
   e = e || window.event;
   var keyCode = $(this).attr('value');
 
-  var audio = new Audio(`sounds/808/${keyCode}.wav`);
+  var audio = new Audio(`sounds/sounds/${keyCode}.wav`);
   audio.play();
   $(`#pad-${keyCode}`).fadeOut(20).fadeIn(20);
 });
