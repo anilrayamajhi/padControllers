@@ -1,4 +1,5 @@
 var sounds = [];
+var soundLoop = '';
 
 
 $('body').on("keypress", function (e) {
@@ -25,15 +26,15 @@ $('body').on("click", '.key-pad', function (e) {
   $(`#pad-${keyCode}`).fadeOut(20).fadeIn(20);
 });
 
-$('body').on('click', '[id^=play-loop-]', function(e){
+$('body').on('click', '#play-loop', function(e){
 
   var thisSelector = $(this);
-  var sound = thisSelector.data('type');
+  // var sound = thisSelector.data('type');
   var sample = thisSelector.attr('id');
-  var selectedLoop = $(`#select_${sound}`).val();
+  var selectedLoop = $(`#select_loop`).val();
 
   if(!thisSelector.hasClass('disabled')){
-    var audio = new Audio(`sounds/samples/${sound}/${selectedLoop}.wav`);
+    var audio = new Audio(`sounds/samples/${selectedLoop}.wav`);
     audio.volume = 0.7;
     audio.addEventListener('ended', function() {
       this.currentTime = 0;
@@ -41,17 +42,15 @@ $('body').on('click', '[id^=play-loop-]', function(e){
     }, false);
 
     audio.play();
-    sounds[sound] = audio;
+    soundLoop = audio;
   }
   thisSelector.addClass('disabled');
 })
 
-$('body').on('click', '[id^=stop-loop-]', function(e){
-  var sound = $(this).data('type');
+$('body').on('click', '#stop-loop', function(e){
+  $(`#play-loop`).removeClass('disabled');
 
-  $(`#play-loop-${sound}`).removeClass('disabled');
-
-  var audio = sounds[sound];
+  var audio = soundLoop;
 
   audio.pause();
 })
