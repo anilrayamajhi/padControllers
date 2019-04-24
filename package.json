@@ -1,0 +1,30 @@
+{
+  "name": "padcontrollers",
+  "version": "1.0.0",
+  "description": "PROJECT (NOEMI & ANIL) -",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anilrayamajhi/padControllers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anilrayamajhi/padControllers/issues"
+  },
+  "homepage": "https://github.com/anilrayamajhi/padControllers#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.6.1",
+    "path": "^0.12.7",
+    "uglifyjs-webpack-plugin": "^1.2.0",
+    "webpack": "^3.11.0"
+  },
+  "scripts": {
+    "clear": "rm -rf js/main.js",
+    "watch": "webpack --watch",
+    "webpack": "webpack",
+    "build": "npm run clear && npm run webpack --dd"
+  }
+}
